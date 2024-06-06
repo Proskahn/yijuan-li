@@ -2,7 +2,7 @@ title: Li Yijuan | 李懿娟
 version: 3.0.0
 email: serenalyjuan@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://arnica-client.vercel.app/" # replace with your Netlify site URL
+url: "https://arnica-client.vercel.app" # replace with your Netlify site URL
 
 # Site Settings
 dark_header: false
