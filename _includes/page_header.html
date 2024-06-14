@@ -21,17 +21,10 @@
 );">
    <div class="container">
       <div class="page-title-box">
-         <h1 class="heading-big {% if page.dark_header == false %} text-white {% endif %}">{{page.title}} 
+         <h1 class="heading-big  text-white">{{page.title}} 
 		 </h1>
          <ul class="page-title-meta list-inline  text-white">
             <li class="list-inline-item"><i class="far fa-calendar"></i> {{page.date | date_to_long_string}}</li>
-            {% for category in page.categories limit:1 %}
-            <li class="list-inline-item">
-               <a href="/category/{{ category | slugize }}/">
-               <i class="far fa-folder-open"></i> {{ category }}
-               </a>
-            </li>
-            {% endfor %}
          </ul>
       </div>
    </div>

@@ -16,34 +16,6 @@ layout: default
                <div class="social-share py-5">
                   {% include social_share.html %}
                </div>
-               {% assign author = site.authors | where: 'short_name', page.author | first %}
-               {% if author %}
-               <div class="single-admin bg-color2 ">
-                  {% if author.image%}
-                  <div class="admin-avatar" style="background-image: url({{author.image}})">
-                     <div class="top"></div>
-                     <div class="bottom"></div>
-                     <div class="border"></div>
-                  </div>
-                  {% endif %}
-                  <div class="admin-comment">
-                     <h4 class="heading-4"><a href="{{author.url}}">{{author.name}}</a></h4>
-                     <h6 class="heading-6">{{author.designation}}</h6>
-                     <p>{{author.bio}}</p>
-                     <ul class="admin-social list-inline">
-                        {% if author.facebook %}
-                        <li class="list-inline-item"><a href="{{author.facebook}}">Facebook </a></li>
-                        {% endif %}
-                        {% if author.twitter %}
-                        <li class="list-inline-item"><a href="{{author.twitter}}">Twitter  </a></li>
-                        {% endif %}
-                        {% if author.instagram %}
-                        <li class="list-inline-item"><a href="{{author.instagram}}">Instagram </a></li>
-                        {% endif %}
-                     </ul>
-                  </div>
-               </div>
-               {% endif %}
             </div>
          </div>
       </div>
