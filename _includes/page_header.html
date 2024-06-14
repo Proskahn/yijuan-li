@@ -23,7 +23,7 @@
       <div class="page-title-box">
          <h1 class="heading-big {% if page.dark_header == false %} text-white {% endif %}">{{page.title}} 
 		 </h1>
-         <ul class="page-title-meta list-inline {% if page.dark_header == false %} text-white {% endif %}">
+         <ul class="page-title-meta list-inline  text-white">
             <li class="list-inline-item"><i class="far fa-calendar"></i> {{page.date | date_to_long_string}}</li>
             {% for category in page.categories limit:1 %}
             <li class="list-inline-item">
