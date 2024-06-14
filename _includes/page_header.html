@@ -16,10 +16,19 @@
 </div>
 {% endif %}
 {% if page.layout == "post" %}
+
 <div class="d-flex align-items-center header-page-title" style="background-image: url(
 {% if page.post_image %} {{page.post_image}} {% else %}{{ site.cover_image }}{% endif %}
 );">
    <div class="container">
+      <style>
+         .entry-content {
+            font-family: "Georgia", serif; /* Apply Times New Roman font */
+            font-size: 1.5em; /* Adjust the font size as needed */
+            /* font-weight: bold; Make the text bold */
+            line-height: 1.6; /* Adjust the line height for better readability */
+         }
+      </style>
       <div class="page-title-box">
          <h1 class="heading-big  text-white">{{page.title}} 
 		 </h1>
