@@ -1,18 +1,21 @@
 # - title: Home
 #   url: /
+
 - title: About
   sublinks:
     - title: About me
       url: /about 
     - title: Reading list
-      url: /styles  
-    -title: 专栏
-      url: /styles2
+      url: /styles
+    - title: 专栏
+      url: /column
+
     # - title: About Writing
     #   url: /styles
     # - title: Comments
     #   url: /contact      
     # - title: 404
     #   url: /404
+
 - title: Contact
   url: /contact 
