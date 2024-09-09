@@ -10,12 +10,10 @@
     - title: 专栏
       url: /column
 
-    # - title: About Writing
-    #   url: /styles
-    # - title: Comments
-    #   url: /contact      
-    # - title: 404
-    #   url: /404
+    - title: About Writing
+      url: /styles  
+    - title: 404
+      url: /404
 
 - title: Contact
   url: /contact 
