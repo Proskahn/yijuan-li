@@ -6,6 +6,8 @@
       url: /about 
     - title: Reading list
       url: /styles  
+    -title: 专栏
+      url: /styles2
     # - title: About Writing
     #   url: /styles
     # - title: Comments
