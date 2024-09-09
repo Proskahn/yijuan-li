@@ -1,13 +1,14 @@
 # - title: Home
 #   url: /
-- title: 专栏
-  url: /column
+
 - title: About
   sublinks:
     - title: About me
       url: /about 
     - title: Reading list
       url: /styles
+    - title: 专栏
+      url: /column
 
     # - title: About Writing
     #   url: /styles
