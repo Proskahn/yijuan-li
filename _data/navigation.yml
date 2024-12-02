@@ -1,13 +1,13 @@
 # - title: Home
 #   url: /
-
+- title: 专栏
+  url: /styles2
 - title: About
   sublinks:
     - title: About me
       url: /about 
     - title: Reading list
       url: /styles
-    - title: 专栏
-      url: /styles2
+
 - title: Contact
   url: /contact 
