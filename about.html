@@ -1,9 +1,72 @@
 ---
 layout: page
-title: About Me
-parmalink: /about
+title: About me
 dark_header: false
+parmalink: /contact
+post_image: img/Unknown-3.png
 ---
+
+<!-- {% include page_header.html %} -->
+
+
+<!-- <div class="pl-5 pr-5 mb-5">
+  If you have some (China-Africa) ideas, drop me a message ;)
+</div> -->
+
 <div class="pl-5 pr-5 mb-5">
-    Li Yijuan is a writer and journalist. Her passions include cross-cultural dynamics, the ills of modernity, collective trauma, and weird food. Most of the time, she writes fiction and nonfiction about everything she encounters. Recently, she has been fascinated with China-Africa topics, the meaning of existence, and introspection as a woman.
+  Li Yijuan is a writer and journalist. Her passions include cross-cultural dynamics, the ills of modernity, collective trauma, and weird food. Most of the time, she writes fiction and nonfiction about everything she encounters. Recently, she has been fascinated with China-Africa topics, the meaning of existence, and introspection as a woman.
 </div>
+
+
+       <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              {% if site.email %}
+              <li class="list-inline-item">
+                <a href="mailto:{{ site.email | encode_email }}">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              {% endif %}
+              {% if site.twitter_username %}
+              <li class="list-inline-item">
+                <a href="https://x.com/serena_lyjuan?t=RVuhMMCMiPkaru_oVax0pA&s=09">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              {% endif %}
+              {% if site.facebook_username %}
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/profile.php?id=100089759058416&mibextid=9R9pXO
+                # instagram_url: https://instagram.com/themeix">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              {% endif %}
+              {% if site.linkedin_username %}
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/yijuan-li-1a9634227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              {% endif %}
+    
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; {{ site.author }} {{ 'now' | date: "%Y" }}</p>
+          </div>
+        </div>
+      </div>
+    </footer>

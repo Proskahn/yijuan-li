@@ -2,11 +2,7 @@
 #   url: /
 - title: 专栏
   url: /styles2
+- title: Reading list
+  url: /styles
 - title: About
-  sublinks:
-    - title: About me
-      url: /about 
-    - title: Reading list
-      url: /styles
-- title: Contact
-  url: /contact
+  url: /about
