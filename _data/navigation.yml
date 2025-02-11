@@ -4,8 +4,6 @@
   url: /column
 - title: Novel
   url: /novel
-
-
 - title: About
   sublinks:
     - title: About me
