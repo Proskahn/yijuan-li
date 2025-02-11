@@ -5,4 +5,8 @@
 - title: Reading list
   url: /reading
 - title: About
+  sublinks:
+  -title: about me
   url: /about
+  -title: Reading list
+  url: /reading
