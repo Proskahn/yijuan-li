@@ -4,10 +4,11 @@
   url: /column
 - title: Novel
   url: /column
+
 - title: About
   sublinks:
-    -title: about me
+    - title: About me
     url: /about
-    -title: Reading list
+    - title: Reading list
     url: /reading
 
