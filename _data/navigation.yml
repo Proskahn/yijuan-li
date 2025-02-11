@@ -2,11 +2,12 @@
 #   url: /
 - title: 专栏
   url: /column
-- title: Reading list
-  url: /reading
+- title: Novel
+  url: /column
 - title: About
   sublinks:
-  -title: about me
-  url: /about
-  -title: Reading list
-  url: /reading
+    -title: about me
+    url: /about
+    -title: Reading list
+    url: /reading
+
