@@ -5,10 +5,10 @@
 - title: Novel
   url: /column
 
+
 - title: About
   sublinks:
     - title: About me
-    url: /about
+      url: /about 
     - title: Reading list
-    url: /reading
-
+      url: /reading  
