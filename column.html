@@ -1,132 +1,132 @@
 ---
-layout: page
-title: 
-dark_header: false
-post_image: /img/image.png
+layout: null
+title: "Full-Screen Negative Margin Example"
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Full Screen Image Theme</title>
+  <title>Full-Screen Negative Margin Example</title>
   <style>
-    /* Basic Reset */
-    * {
+    /* Remove default margin/padding so we can truly go full width/height */
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
-    /* Fullscreen container with zoomed background image */
-    .hero {
+    /* The container that "breaks out" of the parent width using negative margins */
+    .ar-post-item {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      overflow: hidden;
       position: relative;
-      width: 100%;
-      height: 100vh; /* Full viewport height */
-      background-image: url('/img/Meer.jpg');
-      background-size: 110%; /* Zoom in the background image */
-      background-position: center;
-      background-repeat: no-repeat;
     }
 
-    /* Text overlay positioned at the lower left */
-    .overlay {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      max-width: 90%;
-      background-color: transparent; /* No background color */
+    /* Full-screen background container */
+    .blog-style {
+      background-size: cover;         /* Ensures the image covers the container */
+      background-position: center;
+      width: 100%;
+      height: 100vh;                  /* Full viewport height */
+      display: flex;
+      align-items: flex-end;          /* Positions content at bottom if desired */
+    }
+
+    /* Content overlay on top of the image */
+    .blog-content {
+      background-color: rgba(255, 255, 255, 0.122); /* Semi-transparent overlay (optional) */
+      padding: 20px;
+      color: #fff;
+      width: 80%;
       text-align: left;
     }
 
-    /* Larger date text */
+    /* Date styling */
     .blog-date {
-      font-size: 1.5em;
-      color: #fff;
+      font-size: 1.5em;  /* Make date larger if desired */
       margin-bottom: 10px;
+      list-style: none;  /* If using <li>, remove default bullet */
+      padding: 0;
     }
 
-    /* Title styling – no background behind the text */
-    .blog-title {
-      font-size: 1.4em;
+    /* Heading styling */
+    .heading-2 {
+      font-size: 0.9em;
       font-weight: bold;
-      margin-bottom: 15px;
-    }
-    .blog-title a {
-      color: #fff;
-      text-decoration: none;
-      background: transparent !important;
-      box-shadow: none !important;
+      margin-bottom: 5px;
+      line-height: 0.6;
     }
 
     /* Description styling */
     .blog-description {
-      font-size: 1em;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 20px;
-      line-height: 1.4;
+      font-size: 0.7em;
+      color: #fffbfb;
+      margin-bottom: 15px;
     }
 
     /* "Read More" link styling */
-    .read-more {
-      font-size: 1em;
+    .blog-read-more {
+      font-size: 0.7em;
       color: #fff;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
     }
-    .read-more i {
+    .blog-read-more i {
       margin-left: 5px;
     }
-    .read-more:hover {
+    .blog-read-more:hover {
       color: #0073e6;
     }
 
-    /* Responsive adjustments */
+    /* Responsive Styles for Mobile Devices */
     @media (max-width: 768px) {
-      .hero {
-        height: auto;
-        padding: 20px 0;
+      .blog-style {
+        height: 10vh; /* For very small screens, you might prefer a smaller height */
+        align-items: flex-end;
       }
-      .overlay {
-        bottom: 10px;
-        left: 10px;
-        max-width: 95%;
+      .blog-content {
+        padding: 5px;
+        color: #fff;
       }
-      .blog-date {
-        font-size: 1.2em;
-      }
-      .blog-title {
-        font-size: 1.2em;
+      .heading-2 {
+        font-size: 1em;
+        line-height: 1.3;
+        margin-top: 5px;
       }
       .blog-description {
-        font-size: 0.9em;
+        font-size: 0.75em;
+        margin-top: 5px;
       }
-      .read-more {
-        font-size: 0.9em;
+      .blog-read-more {
+        font-size: 0.75em;
       }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="overlay">
-      <!-- Date (large) -->
-      <div class="blog-date">2022年11月1日</div>
-      <!-- Title placed at lower left -->
-      <h1 class="blog-title">
-        <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg">
-          阿尔及尔：我来到非洲的一座大楼里生活
+  <!-- Full-screen container using negative margin trick -->
+  <div class="ar-post-item">
+    <!-- Background image fills the container -->
+    <div class="blog-style" style="background-image: url('/img/Meer.jpg');">
+      <div class="blog-content">
+        <ul class="blog-date list-inline">
+          <li class="list-inline-item">2022年11月1日</li>
+        </ul>
+        <h2 class="heading-2">
+          <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" style="color: #fff; text-decoration: none;">
+            阿尔及尔：我来到非洲的一座大楼里生活
+          </a>
+        </h2>
+        <p class="blog-description">
+          “去非洲”这个想法不完全是一时兴起。一方面是，我想当作家，作家似乎都需要经历。另一方面，教会我写作的老师曾经从美国出走到中国，由此激发了写作灵感。理所当然，他就成了我的模仿对象。再说了，大部分成长小说里，男孩总是在冒险，女孩总是在结婚，于是对我来说，女孩的冒险听起来像“未选择的路”一样诱人。
+        </p>
+        <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" class="blog-read-more">
+          Read More <i class="fas fa-angle-right"></i>
         </a>
-      </h1>
-      <!-- Description -->
-      <p class="blog-description">
-        “去非洲”这个想法不完全是一时兴起。一方面是，我想当作家，作家似乎都需要经历。另一方面，教会我写作的老师曾经从美国出走到中国，由此激发了写作灵感。理所当然，他就成了我的模仿对象。再说了，大部分成长小说里，男孩总是在冒险，女孩总是在结婚，于是对我来说，女孩的冒险听起来像“未选择的路”一样诱人。
-      </p>
-      <!-- "Read More" link -->
-      <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" class="read-more">
-        Read More <i class="fas fa-angle-right"></i>
-      </a>
+      </div>
     </div>
   </div>
 </body>
