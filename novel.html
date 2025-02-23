@@ -1,101 +1,4 @@
----
-layout: page
-title: 
-dark_header: false
-post_image: /img/novelba.jpg
----
-<style>
-   .article-section {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      padding: 0;
-      margin: 0;
-   }
 
-   .ar-post-item {
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      margin-right: calc(-50vw + 50%);
-      overflow: hidden;
-      position: relative;
-   }
-
-   .blog-style {
-      background-size: cover;
-      background-position: center;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: flex-end;
-   }
-
-   .blog-content {
-      background-color: rgba(0, 0, 0, 0.6);
-
-padding: 20px;
-color: #fff;
-width: 100%;
-text-align: left;
-}
-
-
-.heading-2 {
-font-size: 1.0em;
-font-weight: bold;
-margin-bottom: 5px;
-line-height: 1.2;
-}
-
-.blog-description {
-font-size: 0.7em;
-color: #ccc;
-margin-bottom: 15px;
-}
-
-.blog-read-more {
-font-size: 0.7em;
-color: #fff;
-text-decoration: none;
-display: inline-flex;
-align-items: center;
-}
-
-.blog-read-more i {
-margin-left: 5px;
-}
-.blog-read-more:hover {
-   color: #0073e6;
-}
-
-/* Responsive Styles for Mobile Devices */
-/* Responsive Styles for Mobile Devices */
-@media (max-width: 768px) {
-.blog-style {
-   height: 10vh; /* Adjust height for smaller screens */
-   align-items: flex-end; /* Align content to the bottom */
-}
-.blog-content {
-   padding: 5px 5px 5px; /* Reduced padding to bring text closer to the bottom */
-   color: #fff;
-}
-.heading-2 {
-   font-size: 1em; /* Smaller font size for title */
-   line-height: 1.3;
-   margin-top: 5px; /* Less space to keep title closer to the bottom */
-}
-.blog-description {
-   font-size: 0.75em;
-   margin-top: 5px; /* Less space above description */
-}
-.blog-read-more {
-   font-size: 0.75em;
-}
-}
-
-</style>
-
-<div class="entry-content">
    
    <div class="article-section">
       <!-- Article Card 1 -->
@@ -111,9 +14,141 @@ margin-left: 5px;
             </div
          </div>
       </div>
-
-
-
-
    </div>
-</div>
+
+
+
+---
+layout: null
+title: "Full-Screen Negative Margin Example"
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Full-Screen Negative Margin Example</title>
+  <style>
+    /* Remove default margin/padding so we can truly go full width/height */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* The container that "breaks out" of the parent width using negative margins */
+    .ar-post-item {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Full-screen background container */
+    .blog-style {
+      background-size: cover;         /* Ensures the image covers the container */
+      background-position: center;
+      width: 100%;
+      height: 100vh;                  /* Full viewport height */
+      display: flex;
+      align-items: flex-end;          /* Positions content at bottom if desired */
+    }
+
+    /* Content overlay on top of the image */
+    .blog-content {
+      background-color: rgba(255, 255, 255, 0.122); /* Semi-transparent overlay (optional) */
+      padding: 20px;
+      color: #fff;
+      width: 80%;
+      text-align: left;
+    }
+
+    /* Date styling */
+    .blog-date {
+      font-size: 1.5em;  /* Make date larger if desired */
+      margin-bottom: 10px;
+      list-style: none;  /* If using <li>, remove default bullet */
+      padding: 0;
+    }
+
+    /* Heading styling */
+    .heading-2 {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 5px;
+      line-height: 0.6;
+    }
+
+    /* Description styling */
+    .blog-description {
+      font-size: 1.5em;
+      color: #fffbfb;
+      margin-bottom: 15px;
+    }
+
+    /* "Read More" link styling */
+    .blog-read-more {
+      font-size: 0.7em;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .blog-read-more i {
+      margin-left: 5px;
+    }
+    .blog-read-more:hover {
+      color: #0073e6;
+    }
+
+    /* Responsive Styles for Mobile Devices */
+    @media (max-width: 768px) {
+      .blog-style {
+        height: 10vh; /* For very small screens, you might prefer a smaller height */
+        align-items: flex-end;
+      }
+      .blog-content {
+        padding: 5px;
+        color: #fff;
+      }
+      .heading-2 {
+        font-size: 1em;
+        line-height: 1.3;
+        margin-top: 5px;
+      }
+      .blog-description {
+        font-size: 0.75em;
+        margin-top: 5px;
+      }
+      .blog-read-more {
+        font-size: 0.75em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Full-screen container using negative margin trick -->
+  <div class="ar-post-item">
+    <!-- Background image fills the container -->
+    <div class="blog-style" style="background-image: url('/img/bg-index.jpg');">
+      <div class="blog-content">
+        <ul class="blog-date list-inline">
+          <li class="list-inline-item">2025-02-10</li>
+        </ul>
+        <h2 class="heading-2">
+          <a href="https://www.theelephant.info/reflections/2025/02/10/while-we-are-here/" style="color: #fff; text-decoration: none;">
+            While we are here
+          </a>
+        </h2>
+        <p class="blog-description">
+         “Has she…” Manager Lin asked cautiously. “I’m just wondering… Has she found what she was searching for?”
+        </p>
+        <a href="https://www.theelephant.info/reflections/2025/02/10/while-we-are-here/" class="blog-read-more">
+          Read More <i class="fas fa-angle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
