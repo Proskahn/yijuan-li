@@ -31,76 +31,78 @@ post_image: /img/image.png
       align-items: flex-end;
    }
 
+   /* Remove the background color so that text sits directly on the image */
    .blog-content {
-      background-color: rgba(255, 255, 255, 0.005);
+      /* background-color: rgba(255, 255, 255, 0.005); */ /* Removed grey background */
+      padding: 20px;
+      /* Use semi-transparent white text */
+      color: rgba(255, 255, 255, 0.9);
+      width: 80%;
+      text-align: left;
+   }
 
-padding: 20px;
-color: #fff;
-width: 80%;
-text-align: left;
-}
+   .heading-2 {
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-bottom: 5px;
+      line-height: 0.6;
+   }
 
+   .blog-description {
+      font-size: 0.7em;
+      /* Ensure description text is also semi-transparent */
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 15px;
+   }
 
-.heading-2 {
-font-size: 0.9em;
-font-weight: bold;
-margin-bottom: 5px;
-line-height: 0.6;
-}
+   .blog-read-more {
+      font-size: 0.7em;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+   }
 
-.blog-description {
-font-size: 0.7em;
-color: #fffbfb;
-margin-bottom: 15px;
-}
+   .blog-read-more i {
+      margin-left: 5px;
+   }
 
-.blog-read-more {
-font-size: 0.7em;
-color: #fff;
-text-decoration: none;
-display: inline-flex;
-align-items: center;
-}
+   .blog-read-more:hover {
+      color: #0073e6;
+   }
 
-.blog-read-more i {
-margin-left: 5px;
-}
-.blog-read-more:hover {
-   color: #0073e6;
-}
+   /* Responsive Styles for Mobile Devices */
+   @media (max-width: 768px) {
+      .blog-style {
+         height: 10vh; /* Adjust height for smaller screens */
+         align-items: flex-end; /* Align content to the bottom */
+      }
+      .blog-content {
+         padding: 5px; /* Reduced padding to bring text closer to the bottom */
+         color: rgba(255, 255, 255, 0.9);
+      }
+      .heading-2 {
+         font-size: 0.75em; /* Smaller font size for title */
+         line-height: 1.3;
+         margin-top: 5px; /* Less space to keep title closer to the bottom */
+      }
+      .blog-description {
+         font-size: 0.75em;
+         margin-top: 5px; /* Less space above description */
+      }
+      .blog-read-more {
+         font-size: 0.75em;
+      }
+   }
 
-/* Responsive Styles for Mobile Devices */
-/* Responsive Styles for Mobile Devices */
-@media (max-width: 768px) {
-.blog-style {
-   height: 10vh; /* Adjust height for smaller screens */
-   align-items: flex-end; /* Align content to the bottom */
-}
-.blog-content {
-   padding: 5px 5px 5px; /* Reduced padding to bring text closer to the bottom */
-   color: #fff;
-}
-.heading-2 {
-   font-size: 0.75em; /* Smaller font size for title */
-   line-height: 1.3;
-   margin-top: 5px; /* Less space to keep title closer to the bottom */
-}
-.blog-description {
-   font-size: 0.75em;
-   margin-top: 5px; /* Less space above description */
-}
-.blog-read-more {
-   font-size: 0.75em;
-}
-}
-.blog-date {
-  font-size: 0.75em; /* Increase this value as needed */
-}
-
+   .blog-date {
+      font-size: 0.75em;
+      /* Make date text semi-transparent as well */
+      color: rgba(255, 255, 255, 0.9);
+   }
 </style>
 
 <div class="entry-content">
-   
    <div class="article-section">
       <!-- Article Card 1 -->
       <div class="ar-post-item">
@@ -109,14 +111,28 @@ margin-left: 5px;
                <ul class="blog-date list-inline">
                   <li class="list-inline-item">2022年11月1日</li>
                </ul>
-               <h2 class="heading-2"><a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" style="color: #fff; text-decoration: none;">阿尔及尔：我来到非洲的一座大楼里生活</a></h2>
-               <p class="blog-description">“去非洲”这个想法不完全是一时兴起。一方面是，我想当作家，作家似乎都需要经历。另一方面，教会我写作的老师曾经从美国出走到中国，由此激发了写作灵感。理所当然，他就成了我的模仿对象。再说了，大部分成长小说里，男孩总是在冒险，女孩总是在结婚，于是对我来说，女孩的冒险听起来像“未选择的路”一样诱人。</p>
-               <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" class="blog-read-more">Read More <i class="fas fa-angle-right"></i></a>
-            </div
+               <h2 class="heading-2">
+                  <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" style="color: rgba(255, 255, 255, 0.9); text-decoration: none;">
+                     阿尔及尔：我来到非洲的一座大楼里生活
+                  </a>
+               </h2>
+               <p class="blog-description">
+                  “去非洲”这个想法不完全是一时兴起。一方面是，我想当作家，作家似乎都需要经历。另一方面，教会我写作的老师曾经从美国出走到中国，由此激发了写作灵感。理所当然，他就成了我的模仿对象。再说了，大部分成长小说里，男孩总是在冒险，女孩总是在结婚，于是对我来说，女孩的冒险听起来像“未选择的路”一样诱人。
+               </p>
+               <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" class="blog-read-more">
+                  Read More <i class="fas fa-angle-right"></i>
+               </a>
+            </div>
          </div>
       </div>
+   </div>
+</div>
 
 
+
+
+
+<!-- 
       <!-- Article Card 1 -->
       <div class="ar-post-item">
          <div class="blog-style" style="background-image: url('/img/column1.jpg')">
@@ -189,4 +205,4 @@ margin-left: 5px;
 
 
    </div>
-</div>
+</div> -->
