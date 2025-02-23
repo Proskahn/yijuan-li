@@ -1,6 +1,10 @@
-.ar-post-item{
-	display: none;
-}
+.ar-post-item {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+    position: relative;
+  }
 .page-pagination button {
     padding: 15px;
     border-radius: 50px;
