@@ -119,7 +119,7 @@
 			right: auto;
 			top: 100%;
 			margin-top: 30px;
-			background-color: $bg-color-default;
+			background-color: None;
 			min-width: 230px;
 			border-top: 4px solid $border-color;
 			z-index: 999;
@@ -347,7 +347,7 @@ ul#results-container {
 
 .slider-box,
 .blog-title-box {
-	background: $bg-color-default;
+	background: None;
 	padding: 60px;
 	z-index: 10;
 	position: relative;
@@ -503,7 +503,7 @@ ul#results-container {
 		.owl-dot {
 			height: 20px;
 			width: 5px;
-			background-color: $bg-color3;
+			background-color: None;
 			border-radius: $border-radius-round;
 			margin: 0 5px;
 			vertical-align: middle;
