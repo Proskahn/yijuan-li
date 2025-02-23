@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include your main stylesheet if needed -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <style>
+    /* Remove any unwanted grey background from header-related elements */
+    .header-area,
+    .header-nav,
+    .header-nav-white,
+    .header-page-title {
+      background: transparent !important;
+    }
+    
+    /* Optional: Additional styling for inside pages */
+    .inside-content {
+      padding: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Navigation -->
+  {% include header.html %}
+  
+  <!-- Page Header Section (with Background Image & Title) -->
+  {% include page_header.html %}
+  
+  <!-- Main Content Area -->
+  <div class="inside-content">
+    {{ content }}
+  </div>
+  
+  <!-- Optional Footer -->
+  {% include footer.html %}
+</body>
+</html>
