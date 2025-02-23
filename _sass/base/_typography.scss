@@ -42,13 +42,14 @@ h1, h2, h3, h4, h5, h6{
     font-size:$font-size-h1 - 8;
   }
 }
-.heading-2 {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 5px;
-  line-height: 0.6;
+.heading-2 { 
+  font-size:$font-size-h2; 
+  line-height: floor(($font-size-h2 + 8));
+  @include tablet{
+    font-size:$font-size-h2 - 8;
+    line-height: $font-size-h2; 
+  }
 }
-
 .heading-3 {
   font-size: $font-size-h3; 
   line-height: floor(($font-size-h3 + 8));
