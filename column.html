@@ -5,136 +5,130 @@ dark_header: false
 post_image: /img/image.png
 ---
 
-<style>
-   /* Container for the main article section */
-   .article-section {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      padding: 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transparent Theme Example</title>
+  <style>
+    /* Basic reset */
+    * {
       margin: 0;
-   }
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-   /* Container for each article card */
-   .ar-post-item {
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      margin-right: calc(-50vw + 50%);
-      overflow: hidden;
+    /* Fullscreen background image container */
+    .hero {
       position: relative;
-   }
-
-   /* The large background image container */
-   .blog-style {
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      background-image: url('/img/Meer.jpg');
       background-size: cover;
       background-position: center;
-      width: 100%;
-      height: 100vh;
       display: flex;
-      align-items: flex-end;
-   }
+      align-items: center;
+      justify-content: center;
+    }
 
-   /* Content overlay (fully transparent background) */
-   .blog-content {
-      background-color: transparent; /* No background overlay */
-      padding: 20px;
-      color: rgba(255, 255, 255, 0.9);
+    /* Overlay container for text, no background */
+    .overlay {
       width: 80%;
+      max-width: 1000px;
+      padding: 20px;
       text-align: left;
-   }
+      background-color: transparent; /* Ensures no grey background */
+    }
 
-   /* Heading styles */
-   .heading-2 {
-      font-size: 0.9em;
+    /* Larger date text */
+    .blog-date {
+      font-size: 1.5em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    /* Title with no background behind it */
+    .blog-title {
+      font-size: 1.2em;
       font-weight: bold;
-      margin-bottom: 5px;
-      line-height: 0.6;
-      background-color: transparent !important;
-      box-shadow: none !important;
-   }
-   /* Remove any gray background that might be applied by the theme */
-   .heading-2,
-   .heading-2 a {
-      background-color: transparent !important;
-      box-shadow: none !important;
-   }
-
-   /* Paragraph/description styles */
-   .blog-description {
-      font-size: 0.7em;
-      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.2;
       margin-bottom: 15px;
-   }
+    }
+    .blog-title a {
+      color: #fff;
+      text-decoration: none;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
 
-   /* "Read More" link styles */
-   .blog-read-more {
-      font-size: 0.7em;
+    /* Description text directly on the image */
+    .blog-description {
+      font-size: 0.9em;
       color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    /* "Read More" link styling */
+    .read-more {
+      font-size: 0.9em;
+      color: #fff;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-   }
-   .blog-read-more i {
+    }
+    .read-more i {
       margin-left: 5px;
-   }
-   .blog-read-more:hover {
+    }
+    .read-more:hover {
       color: #0073e6;
-   }
+    }
 
-   /* Responsive Styles for Mobile Devices */
-   @media (max-width: 768px) {
-      .blog-style {
-         height: 10vh; /* Adjust height for smaller screens */
-         align-items: flex-end; /* Align content to the bottom */
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hero {
+        height: auto; /* Let content drive height on smaller screens */
+        padding: 20px 0;
       }
-      .blog-content {
-         padding: 5px; /* Reduced padding */
-         color: rgba(255, 255, 255, 0.9);
+      .overlay {
+        width: 90%;
+        padding: 10px;
       }
-      .heading-2 {
-         font-size: 0.75em; /* Smaller font size for title */
-         line-height: 1.3;
-         margin-top: 5px;
+      .blog-date {
+        font-size: 1.2em;
+      }
+      .blog-title {
+        font-size: 1em;
       }
       .blog-description {
-         font-size: 0.75em;
-         margin-top: 5px;
+        font-size: 0.8em;
       }
-      .blog-read-more {
-         font-size: 0.75em;
+      .read-more {
+        font-size: 0.8em;
       }
-   }
-
-   /* Increase date font size */
-   .blog-date {
-      font-size: 1.5em;
-      color: rgba(255, 255, 255, 0.9);
-   }
-</style>
-
-<div class="entry-content">
-   <div class="article-section">
-      <!-- Article Card 1 -->
-      <div class="ar-post-item">
-         <div class="blog-style" style="background-image: url('/img/Meer.jpg')">
-            <div class="blog-content">
-               <ul class="blog-date list-inline">
-                  <li class="list-inline-item">2022年11月1日</li>
-               </ul>
-               <h2 class="heading-2">
-                  <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" 
-                     style="color: rgba(255, 255, 255, 0.9); text-decoration: none;">
-                     阿尔及尔：我来到非洲的一座大楼里生活
-                  </a>
-               </h2>
-               <p class="blog-description">
-                  “去非洲”这个想法不完全是一时兴起。一方面是，我想当作家，作家似乎都需要经历。另一方面，教会我写作的老师曾经从美国出走到中国，由此激发了写作灵感。理所当然，他就成了我的模仿对象。再说了，大部分成长小说里，男孩总是在冒险，女孩总是在结婚，于是对我来说，女孩的冒险听起来像“未选择的路”一样诱人。
-               </p>
-               <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" class="blog-read-more">
-                  Read More <i class="fas fa-angle-right"></i>
-               </a>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="overlay">
+      <!-- Date -->
+      <div class="blog-date">2022年11月1日</div>
+      <!-- Title with transparent background -->
+      <h1 class="blog-title">
+        <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg">
+          阿尔及尔：我来到非洲的一座大楼里生活
+        </a>
+      </h1>
+      <!-- Description -->
+      <p class="blog-description">
+        “去非洲”这个想法不完全是一时兴起。一方面是，我想当作家，作家似乎都需要经历。另一方面，教会我写作的老师曾经从美国出走到中国，由此激发了写作灵感。理所当然，他就成了我的模仿对象。再说了，大部分成长小说里，男孩总是在冒险，女孩总是在结婚，于是对我来说，女孩的冒险听起来像“未选择的路”一样诱人。
+      </p>
+      <!-- "Read More" link -->
+      <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" class="read-more">
+        Read More <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
