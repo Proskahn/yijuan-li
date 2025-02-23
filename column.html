@@ -6,6 +6,7 @@ post_image: /img/image.png
 ---
 
 <style>
+   /* Container for the main article section */
    .article-section {
       display: flex;
       flex-direction: column;
@@ -14,6 +15,7 @@ post_image: /img/image.png
       margin: 0;
    }
 
+   /* Container for each article card */
    .ar-post-item {
       width: 100vw;
       margin-left: calc(-50vw + 50%);
@@ -22,6 +24,7 @@ post_image: /img/image.png
       position: relative;
    }
 
+   /* The large background image container */
    .blog-style {
       background-size: cover;
       background-position: center;
@@ -31,27 +34,37 @@ post_image: /img/image.png
       align-items: flex-end;
    }
 
+   /* Content overlay (fully transparent background) */
    .blog-content {
-      background-color: transparent; /* Fully transparent background */
+      background-color: transparent; /* No background overlay */
       padding: 20px;
       color: rgba(255, 255, 255, 0.9);
       width: 80%;
       text-align: left;
    }
 
+   /* Heading styles */
    .heading-2 {
       font-size: 0.9em;
       font-weight: bold;
       margin-bottom: 5px;
       line-height: 0.6;
    }
+   /* Remove any gray background that might be applied by the theme */
+   .heading-2,
+   .heading-2 a {
+      background-color: transparent !important;
+      box-shadow: none !important;
+   }
 
+   /* Paragraph/description styles */
    .blog-description {
       font-size: 0.7em;
       color: rgba(255, 255, 255, 0.9);
       margin-bottom: 15px;
    }
 
+   /* "Read More" link styles */
    .blog-read-more {
       font-size: 0.7em;
       color: rgba(255, 255, 255, 0.9);
@@ -59,7 +72,6 @@ post_image: /img/image.png
       display: inline-flex;
       align-items: center;
    }
-
    .blog-read-more i {
       margin-left: 5px;
    }
@@ -78,7 +90,7 @@ post_image: /img/image.png
          color: rgba(255, 255, 255, 0.9);
       }
       .heading-2 {
-         font-size: 0.75em;
+         font-size: 0.75em; /* Smaller font size for title */
          line-height: 1.3;
          margin-top: 5px;
       }
@@ -91,8 +103,9 @@ post_image: /img/image.png
       }
    }
 
+   /* Increase date font size */
    .blog-date {
-      font-size: 1.5em; /* Increased font size for the date */
+      font-size: 1.5em;
       color: rgba(255, 255, 255, 0.9);
    }
 </style>
@@ -107,7 +120,8 @@ post_image: /img/image.png
                   <li class="list-inline-item">2022年11月1日</li>
                </ul>
                <h2 class="heading-2">
-                  <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" style="color: rgba(255, 255, 255, 0.9); text-decoration: none;">
+                  <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg" 
+                     style="color: rgba(255, 255, 255, 0.9); text-decoration: none;">
                      阿尔及尔：我来到非洲的一座大楼里生活
                   </a>
                </h2>
