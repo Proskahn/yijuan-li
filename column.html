@@ -9,35 +9,34 @@ post_image: /img/image.png
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Transparent Theme Example</title>
+  <title>Full Screen Image Theme</title>
   <style>
-    /* Basic reset */
+    /* Basic Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Fullscreen background image container */
+    /* Fullscreen container with zoomed background image */
     .hero {
       position: relative;
       width: 100%;
       height: 100vh; /* Full viewport height */
       background-image: url('/img/Meer.jpg');
-      background-size: cover;
+      background-size: 110%; /* Zoom in the background image */
       background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-repeat: no-repeat;
     }
 
-    /* Overlay container for text, no background */
+    /* Text overlay positioned at the lower left */
     .overlay {
-      width: 80%;
-      max-width: 1000px;
-      padding: 20px;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      max-width: 90%;
+      background-color: transparent; /* No background color */
       text-align: left;
-      background-color: transparent; /* Ensures no grey background */
     }
 
     /* Larger date text */
@@ -47,11 +46,10 @@ post_image: /img/image.png
       margin-bottom: 10px;
     }
 
-    /* Title with no background behind it */
+    /* Title styling – no background behind the text */
     .blog-title {
-      font-size: 1.2em;
+      font-size: 1.4em;
       font-weight: bold;
-      line-height: 1.2;
       margin-bottom: 15px;
     }
     .blog-title a {
@@ -61,9 +59,9 @@ post_image: /img/image.png
       box-shadow: none !important;
     }
 
-    /* Description text directly on the image */
+    /* Description styling */
     .blog-description {
-      font-size: 0.9em;
+      font-size: 1em;
       color: rgba(255, 255, 255, 0.9);
       margin-bottom: 20px;
       line-height: 1.4;
@@ -71,7 +69,7 @@ post_image: /img/image.png
 
     /* "Read More" link styling */
     .read-more {
-      font-size: 0.9em;
+      font-size: 1em;
       color: #fff;
       text-decoration: none;
       display: inline-flex;
@@ -84,27 +82,28 @@ post_image: /img/image.png
       color: #0073e6;
     }
 
-    /* Responsive Styles */
+    /* Responsive adjustments */
     @media (max-width: 768px) {
       .hero {
-        height: auto; /* Let content drive height on smaller screens */
+        height: auto;
         padding: 20px 0;
       }
       .overlay {
-        width: 90%;
-        padding: 10px;
+        bottom: 10px;
+        left: 10px;
+        max-width: 95%;
       }
       .blog-date {
         font-size: 1.2em;
       }
       .blog-title {
-        font-size: 1em;
+        font-size: 1.2em;
       }
       .blog-description {
-        font-size: 0.8em;
+        font-size: 0.9em;
       }
       .read-more {
-        font-size: 0.8em;
+        font-size: 0.9em;
       }
     }
   </style>
@@ -112,9 +111,9 @@ post_image: /img/image.png
 <body>
   <div class="hero">
     <div class="overlay">
-      <!-- Date -->
+      <!-- Date (large) -->
       <div class="blog-date">2022年11月1日</div>
-      <!-- Title with transparent background -->
+      <!-- Title placed at lower left -->
       <h1 class="blog-title">
         <a href="https://mp.weixin.qq.com/s/2s1yGd3Hw7tJOxS_JDHKwg">
           阿尔及尔：我来到非洲的一座大楼里生活
