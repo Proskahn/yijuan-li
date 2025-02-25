@@ -2,8 +2,8 @@
 #   url: /
 - title: 专栏
   url: /column
-- title: Novel
-  url: /novel
+- title: Fiction
+  url: /fiction
 - title: About
   sublinks:
     - title: About me
