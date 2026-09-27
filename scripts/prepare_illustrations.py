@@ -65,7 +65,7 @@ def main():
                 "number": number,
                 "title": title,
                 "source": path.name,
-                "category": "study" if title.startswith("Exercise - ") else "illustration",
+                "category": "excercises" if title.startswith("Exercise - ") else "illustration",
                 "width": artwork.width,
                 "height": artwork.height,
             }
