@@ -16,6 +16,7 @@ linkedin_username: https://www.linkedin.com/in/yijuan-li-1a9634227?utm_source=sh
 exclude:
   - illustration/
   - scripts/
+  - requirements.txt
 markdown: kramdown
 plugins:
   - jekyll-feed

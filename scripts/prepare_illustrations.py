@@ -2,9 +2,10 @@
 """Create gallery data and web images without changing the original artwork.
 
 Run from any directory: python3 scripts/prepare_illustrations.py
-Requires Pillow. HEIC/HEIF uses macOS sips, or pillow-heif on other platforms.
+Install dependencies: python3 -m pip install -r requirements.txt
+HEIC/HEIF uses macOS sips, or pillow-heif on other platforms.
 Numbered filenames set the order; their text supplies the displayed titles.
-Commit the generated _data/illustrations.json and assets/illustrations files.
+Netlify runs this before Jekyll so captions and image paths stay in sync.
 """
 
 import io
@@ -21,6 +22,11 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "illustration"
 OUTPUT = ROOT / "assets" / "illustrations"
 EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".heic", ".heif"}
+
+
+def artwork_order(path):
+    match = re.match(r"^(\d+)\s+", path.stem)
+    return (int(match.group(1)) if match else float("inf"), path.name.casefold())
 
 
 def open_artwork(path, temporary):
@@ -51,12 +57,17 @@ def open_artwork(path, temporary):
 
 
 def main():
+    sources = sorted(
+        (path for path in SOURCE.iterdir() if path.is_file() and path.suffix.lower() in EXTENSIONS),
+        key=artwork_order,
+    )
+    if not sources:
+        raise RuntimeError(f"No artwork found in {SOURCE}; the existing gallery was not changed.")
     OUTPUT.mkdir(parents=True, exist_ok=True)
     works = []
+    generated = set()
     with tempfile.TemporaryDirectory() as temporary:
-        for path in sorted(SOURCE.iterdir()):
-            if path.suffix.lower() not in EXTENSIONS:
-                continue
+        for path in sources:
             match = re.match(r"^(\d+)\s+(.+)$", path.stem)
             number, title = match.groups() if match else (f"{len(works) + 1:02}", path.stem)
             slug = re.sub(r"[^a-z0-9]+", "-", path.stem.lower()).strip("-")
@@ -75,6 +86,7 @@ def main():
                 height = round(image.height * width / image.width)
                 image = image.resize((width, height), Image.Resampling.LANCZOS)
                 destination = OUTPUT / f"{slug}-{label}.webp"
+                generated.add(destination)
                 image.save(destination, "WEBP", quality=88, method=6)
                 work[label] = "/" + destination.relative_to(ROOT).as_posix()
                 work[f"{label}_width"] = width
@@ -83,6 +95,10 @@ def main():
     (ROOT / "_data" / "illustrations.json").write_text(
         json.dumps(works, ensure_ascii=False, indent=2) + "\n", encoding="utf-8",
     )
+    # Only remove obsolete generated sizes after all new artwork is ready.
+    for previous in OUTPUT.glob("*.webp"):
+        if re.search(r"-(small|medium|large)\.webp$", previous.name) and previous not in generated:
+            previous.unlink()
     print(f"Prepared {len(works)} works.")
 
 

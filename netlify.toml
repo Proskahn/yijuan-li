@@ -1,8 +1,9 @@
 [build]
-  command = "bundle exec jekyll build"
+  command = "python3 scripts/prepare_illustrations.py && bundle exec jekyll build"
   publish = "_site/"
 
 [build.environment]
+  PYTHON_VERSION = "3.13"
   RUBY_VERSION = "2.6.2"
   BUNDLER_VERSION = "2.2.3"
 
