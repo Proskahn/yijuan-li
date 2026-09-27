@@ -13,6 +13,9 @@ twitter_username: https://x.com/serena_lyjuan?t=RVuhMMCMiPkaru_oVax0pA&s=09
 linkedin_username: https://www.linkedin.com/in/yijuan-li-1a9634227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
 # Build Settings
+exclude:
+  - illustration/
+  - scripts/
 markdown: kramdown
 plugins:
   - jekyll-feed

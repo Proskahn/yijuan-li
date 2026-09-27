@@ -1,0 +1,70 @@
+---
+layout: default
+title: Illustration | Li Yijuan
+description: Drawings, paintings, and small observations by Li Yijuan.
+permalink: /illustration/
+gallery: true
+lang: en
+---
+<main class="illustration-gallery" id="illustrations">
+   <div class="gallery-container">
+      <header class="gallery-intro">
+         <p class="gallery-eyebrow">Drawings &amp; paintings</p>
+         <h1>Illustration<span aria-hidden="true">.</span></h1>
+         <div class="gallery-intro-bottom">
+            <p>Places, people, and small observations.</p>
+            <p class="gallery-invitation">Take a closer look <span aria-hidden="true">↗</span></p>
+         </div>
+      </header>
+
+      <div class="gallery-toolbar">
+         <div class="gallery-filters" role="group" aria-label="Filter illustrations" hidden>
+            <button type="button" class="is-active" data-filter="all" aria-pressed="true">All works</button>
+            <button type="button" data-filter="illustration" aria-pressed="false">Illustrations</button>
+            <button type="button" data-filter="study" aria-pressed="false">Studies</button>
+         </div>
+         <p class="gallery-count" role="status" aria-live="polite"><span data-gallery-count>{{ site.data.illustrations.size }}</span> works</p>
+      </div>
+
+      <div class="gallery-grid">
+         {% for work in site.data.illustrations %}
+         <figure class="gallery-work" data-category="{{ work.category }}">
+            <a class="gallery-image-link" href="{{ work.large | relative_url }}" data-title="{{ work.title | escape }}" data-number="{{ work.number }}" aria-label="View {{ work.title | escape }}">
+               <div class="gallery-image">
+                  <img src="{{ work.small | relative_url }}"
+                       srcset="{{ work.small | relative_url }} {{ work.small_width }}w, {{ work.medium | relative_url }} {{ work.medium_width }}w"
+                       sizes="(max-width: 600px) calc(100vw - 40px), (max-width: 991px) calc((100vw - 80px) / 2), (max-width: 1320px) calc((100vw - 144px) / 3), 392px"
+                       width="{{ work.width }}" height="{{ work.height }}"
+                       alt="{{ work.title | escape }}"
+                       {% if forloop.index > 3 %}loading="lazy"{% else %}loading="eager"{% endif %} decoding="async">
+                  <span class="gallery-expand" aria-hidden="true">↗</span>
+               </div>
+            </a>
+            <figcaption>
+               <span class="gallery-work-number">{{ work.number }}</span>
+               <span class="gallery-work-title">{{ work.title | escape }}</span>
+            </figcaption>
+         </figure>
+         {% endfor %}
+      </div>
+      <div class="gallery-end"><span aria-hidden="true">✳</span><p>A sketchbook, still unfolding.</p></div>
+   </div>
+</main>
+
+<dialog class="gallery-viewer" aria-labelledby="viewer-title">
+   <div class="viewer-shell">
+      <div class="viewer-topbar">
+         <span class="viewer-label">Illustration <span data-viewer-position></span></span>
+         <button type="button" class="viewer-close" aria-label="Close illustration">Close <span aria-hidden="true">×</span></button>
+      </div>
+      <div class="viewer-stage">
+         <button type="button" class="viewer-arrow viewer-previous" aria-label="Previous illustration">←</button>
+         <img class="viewer-image" alt="">
+         <button type="button" class="viewer-arrow viewer-next" aria-label="Next illustration">→</button>
+      </div>
+      <div class="viewer-caption" aria-live="polite" aria-atomic="true">
+         <span class="gallery-work-number" data-viewer-number></span>
+         <h2 id="viewer-title"></h2>
+      </div>
+   </div>
+</dialog>

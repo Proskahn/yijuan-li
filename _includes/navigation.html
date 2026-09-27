@@ -9,7 +9,7 @@
            </ul>
        </li>
        {% else %}
-       <li class="{% if links.url == page.url %} active {% endif %}"><a href="{{links.url absolute='true'}}">{{links.title}}</a></li>
+       <li class="{% if links.url == page.url %} active {% endif %}"><a href="{{links.url absolute='true'}}"{% if links.url == page.url %} aria-current="page"{% endif %}>{{links.title}}</a></li>
      {% endif %}
    {% endfor %}
       <li>
@@ -31,4 +31,3 @@
 <span class="collapse-bar"></span>
 <span class="collapse-bar"></span>
 </button>
-
